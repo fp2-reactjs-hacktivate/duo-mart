@@ -1,10 +1,18 @@
 .default {
-    display: flex;
-    flex-direction: column;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #a7a6a6; /* Menambahkan border dengan warna abu-abu (#ccc) */
+  border-radius: 8px; /* Mengatur sudut border dengan radius 8px */
+  padding: 1rem; /* Memberikan sedikit ruang di dalam border */
 }
 
 .default > div {
-    display: flex;
-    flex-direction: column;
-    margin-top: 2rem;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  border: 1px solid #a7a6a6; /* Menambahkan border pada div */
+  border-radius: 8px; /* Mengatur sudut border dengan radius 8px */
+  padding: 1rem; /* Memberikan sedikit ruang di dalam border */
 }

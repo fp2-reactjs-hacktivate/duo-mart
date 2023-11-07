@@ -8,36 +8,35 @@ import ProductCards from "../../components/ProductCards";
 import SectionHeader from "../../components/SectionHeader";
 
 const Home = () => {
-    const products = useSelector((state) => state.products.products);
-    
-    const firstRender = useSelector((state) => state.products.firstRender);
+  const products = useSelector((state) => state.products.products);
 
-    const dispatch = useDispatch();
+  const firstRender = useSelector((state) => state.products.firstRender);
 
-    useEffect(() => {
-        getProducts().then(res => {
-            const tempData = res.data?.map((item) => {
-                return { ...item, quantity: 20 }
-            });
+  const dispatch = useDispatch();
 
-            if (firstRender) {
-                dispatch(initiateProducts(tempData));
-            }
-        });
-    }, [firstRender, dispatch]);
+  useEffect(() => {
+    getProducts().then((res) => {
+      const tempData = res.data?.map((item) => {
+        return { ...item, quantity: 20 };
+      });
 
-    return (
-        <>
-            <Header />
-            <SectionHeader title="Products" />
-            {
-                products ?
-                    <ProductCards data={products} />
-                    :
-                    <InfinitySpin color="black" />
-            }
-        </>
-    );
+      if (firstRender) {
+        dispatch(initiateProducts(tempData));
+      }
+    });
+  }, [firstRender, dispatch]);
+
+  return (
+    <div className="container">
+      <Header />
+      <SectionHeader title="Products" />
+      {products ? (
+        <ProductCards data={products} />
+      ) : (
+        <InfinitySpin color="black" />
+      )}
+    </div>
+  );
 };
 
 export default Home;
