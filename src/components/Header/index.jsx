@@ -1,12 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Navbar, Nav } from "react-bootstrap";
 import Swal from "sweetalert2";
 import styles from "./style.module.css";
-import logo from "../../assets/img/favicon.png"
+import logo from "../../assets/img/favicon.png";
 
 const Header = () => {
     const navigate = useNavigate();
-
     const auth = JSON.parse(localStorage.getItem("auth"));
 
     const handleLogout = () => {
@@ -40,32 +39,39 @@ const Header = () => {
                     <img src={logo} alt="DuoMart" className={styles.logo} />
                     DuoMart
                 </Navbar.Brand>
-                <Navbar.Toggle aria-controls="navbarScroll" />
-                <Navbar.Collapse id="navbarScroll">
-                    <Nav
-                        className="me-auto my-2 my-lg-0"
-                        style={{ maxHeight: "10px" }}
-                        navbarScroll
-                    >
-                        <Nav.Link
-                            as={Link}
-                            to={auth ? auth.roles === "user" ? "/" : "/admin" : "/"}
-                        >
-                            Home
-                        </Nav.Link>
-                        {
-                            auth ?
-                                auth.roles === "user" ?
-                                    <Nav.Link as={Link} to="/cart">Cart</Nav.Link>
-                                    :
-                                    <Nav.Link as={Link} to="/rekap-penjualan">Rekap Penjualan</Nav.Link>
-                                :
-                                <Nav.Link as={Link} to="/login">Login</Nav.Link>
-                        }
-                        {
-                            auth ? <Nav.Link onClick={handleLogout}>Logout</Nav.Link> : <></>
-                        }
-                        <Nav.Link as={Link} to="/about">About</Nav.Link>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="me-auto">
+                        <ul className="navbar-nav">
+                            <li className="nav-item">
+                                <Nav.Link as={Link} to={auth ? (auth.roles === "user" ? "/" : "/admin") : "/"}>
+                                    Home
+                                </Nav.Link>
+                            </li>
+                            {auth ? (
+                                auth.roles === "user" ? (
+                                    <li className="nav-item">
+                                        <Nav.Link as={Link} to="/cart">Cart</Nav.Link>
+                                    </li>
+                                ) : (
+                                    <li className="nav-item">
+                                        <Nav.Link as={Link} to="/rekap-penjualan">Rekap Penjualan</Nav.Link>
+                                    </li>
+                                )
+                            ) : (
+                                <li className="nav-item">
+                                    <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                                </li>
+                            )}
+                            {auth && (
+                                <li className="nav-item">
+                                    <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
+                                </li>
+                            )}
+                            <li className="nav-item">
+                                <Nav.Link as={Link} to="/about">About</Nav.Link>
+                            </li>
+                        </ul>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
