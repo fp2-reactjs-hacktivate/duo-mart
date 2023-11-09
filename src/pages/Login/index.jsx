@@ -67,7 +67,7 @@ const Login = () => {
       <SectionHeader title="Login" />
       <Form
         style={{
-          width: "80%",
+          width: "100%",
           margin: "2.5rem auto",
           padding: "2rem" /* Menambahkan padding 2 rem */,
           background: "#e0e0e0" /* Menambahkan warna latar belakang */,
