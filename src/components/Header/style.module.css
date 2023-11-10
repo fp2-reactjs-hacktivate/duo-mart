@@ -1,4 +1,12 @@
 .logo {
-    margin-right: 0.75rem;
-    max-width: 50px;
+  margin-right: 0.75rem;
+  max-width: 50px;
+}
+
+.navLink {
+  transition: color 0.3s;
+}
+
+.navLink:hover {
+  color: #ffa500; /* Ganti dengan warna yang Anda inginkan saat dihover */
 }

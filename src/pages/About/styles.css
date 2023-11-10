@@ -1,0 +1,18 @@
+/* styles.css */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+ul li {
+  text-align: justify;
+  margin-bottom: 10px;
+}

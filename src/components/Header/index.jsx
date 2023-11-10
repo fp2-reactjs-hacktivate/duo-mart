@@ -8,25 +8,25 @@ const Header = () => {
     const navigate = useNavigate();
     const auth = JSON.parse(localStorage.getItem("auth"));
 
-    const handleLogout = () => {
+  const handleLogout = () => {
+    Swal.fire({
+      title: "Are you sure to logout?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, Logout!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.removeItem("auth");
+        navigate("/login");
         Swal.fire({
-            title: "Are you sure to logout?",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, Logout!"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                localStorage.removeItem("auth");
-                navigate("/login");
-                Swal.fire({
-                    title: "Logout Success",
-                    icon: "success"
-                });
-            }
+          title: "Logout Success",
+          icon: "success",
         });
-    };
+      }
+    });
+  };
 
     return (
         <Navbar bg="dark" variant="dark" expand="lg" fixed="top">

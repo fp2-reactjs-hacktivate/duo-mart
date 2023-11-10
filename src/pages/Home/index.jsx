@@ -27,7 +27,7 @@ const Home = () => {
   }, [firstRender, dispatch]);
 
   return (
-    <div className="container">
+    <>
       <Header />
       <SectionHeader title="Products" />
       {products ? (
@@ -35,7 +35,7 @@ const Home = () => {
       ) : (
         <InfinitySpin color="black" />
       )}
-    </div>
+    </>
   );
 };
 
