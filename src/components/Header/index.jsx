@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { Container, Navbar, Nav } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import Swal from "sweetalert2";
 import styles from "./style.module.css";
 import logo from "../../assets/img/favicon.png";
@@ -30,8 +30,7 @@ const Header = () => {
 
     return (
         <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
-            <Container>
-                <Navbar.Brand
+            <Navbar.Brand
                     as={Link}
                     to="/"
                     style={{ display: "flex", alignItems: "center" }}
@@ -39,6 +38,7 @@ const Header = () => {
                     <img src={logo} alt="DuoMart" className={styles.logo} />
                     DuoMart
                 </Navbar.Brand>
+            
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
@@ -74,7 +74,7 @@ const Header = () => {
                         </ul>
                     </Nav>
                 </Navbar.Collapse>
-            </Container>
+            
         </Navbar>
     );
 };

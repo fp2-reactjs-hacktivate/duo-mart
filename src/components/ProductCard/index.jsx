@@ -44,8 +44,8 @@ const ProductCard = ({ data }) => {
         style={{
           display: "flex",
           justifyContent: "space-around",
-          maxHeight: "32rem", // Ganti dengan tinggi yang Anda inginkan
-          border: "1px solid #ccc", // Menambahkan garis tepi untuk membedakan kartu
+          maxHeight: "40rem", 
+          border: "1px solid #ccc", 
         }}
         className="m-2 mt-4"
       >
