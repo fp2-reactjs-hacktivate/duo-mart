@@ -1,0 +1,49 @@
+/* styles.css */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+ul li {
+  text-align: justify;
+  margin-bottom: 10px;
+}
+
+.home-photo {
+  height: 400px;
+  width: 400px;
+  object-fit: cover;
+  border-radius: 32px;
+  position: relative;
+  z-index: 10;
+}
+.home-photo__line {
+  height: 400px;
+  width: 400px;
+  border-radius: 32px;
+  border: 1px solid #2574eb;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.icon-social-media {
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  background-color: rgb(6, 27, 187);
+  color: #fff !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 14px;
+  margin-top: 0px;
+}
