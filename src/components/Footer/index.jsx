@@ -1,9 +1,13 @@
-const Footer = () => {
+import React from "react";
+
+class Footer extends React.Component {
+  render() {
     return (
-        <footer>
-            <small>&copy; 2023 | DuoMart</small>
-        </footer>
+      <footer className="py-3 border-t" style={{ marginTop: "140px" }}>
+        <h5 className="text-center">Copyright &copy; DuoMart</h5>
+      </footer>
     );
-};
+  }
+}
 
 export default Footer;
