@@ -44,7 +44,7 @@ const ProductCard = ({ data }) => {
         style={{
           display: "flex",
           justifyContent: "space-around",
-          maxHeight: "40rem", 
+          maxHeight: "32rem", 
           border: "1px solid #ccc", 
         }}
         className="m-2 mt-4"
