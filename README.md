@@ -1,11 +1,12 @@
-# React + Vite
-## Default User:
-## username = johnd
-## password = m38rmF$
+# Duo-Mart
 
-## Default Admin:
-## username = admin@duomart.com
-## password = admin123
+Default User:
+username = johnd
+password = m38rmF$
+
+Default Admin:
+username = admin@duomart.com
+password = admin123
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
