@@ -14,13 +14,14 @@ import ProductDetail from "../pages/ProductDetail";
 const GlobalRoutes = () => {
     return (
         <Routes>
-            <Route path="/" element={<Home />} />
+            
             <Route element={<PrivateRoutes />}>
                 <Route element={<AdminRoutes />}>
                     <Route path="/admin" element={<Admin />} />
                     <Route path="/rekap-penjualan" element={<RekapPenjualan />} />
                 </Route>
                 <Route element={<UserRoutes />}>
+                    <Route path="/" element={<Home />} />
                     <Route path="/cart" element={<Cart />} />
                 </Route>
             </Route>
